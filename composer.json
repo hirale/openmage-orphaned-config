@@ -1,0 +1,20 @@
+{
+    "name": "hirale/openmage-orphaned-config",
+    "description": "Retrieve all system configurations from system.xml, compare them with the entries in the core_config_data table, and list any orphaned configurations in the backend.",
+    "type": "magento-module",
+    "keywords": [
+        "magento",
+        "magento1",
+        "openmage"
+    ],
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*",
+        "php": ">=5.6"
+    },
+    "license": "OSL-3.0",
+    "authors": [
+        {
+            "name": "Hirale"
+        }
+    ]
+}

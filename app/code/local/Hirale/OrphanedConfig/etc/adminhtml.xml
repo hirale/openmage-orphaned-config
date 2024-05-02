@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <system>
+            <children>
+                <tools>
+                    <children>
+                        <orphanedconfig translate="title" module="orphanedconfig">
+                            <title>Orphaned Config</title>
+                            <sort_order>100</sort_order>
+                            <action>adminhtml/orphanedconfig</action>
+                        </orphanedconfig>
+                    </children>
+                </tools>
+            </children>
+        </system>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <tools>
+                                <children>
+                                    <orphanedconfig translate="title" module="orphanedconfig">
+                                        <title>Orphaned Config</title>
+                                        <sort_order>100</sort_order>
+                                    </orphanedconfig>
+                                </children>
+                            </tools>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

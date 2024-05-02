@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Hirale_OrphanedConfig>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Hirale_OrphanedConfig>
+    </modules>
+</config>

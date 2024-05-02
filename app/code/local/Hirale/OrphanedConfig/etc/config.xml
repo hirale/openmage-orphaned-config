@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Hirale_OrphanedConfig>
+            <version>1.0.0</version>
+        </Hirale_OrphanedConfig>
+    </modules>
+    <global>
+        <blocks>
+            <orphanedconfig>
+                <class>Hirale_OrphanedConfig_Block</class>
+            </orphanedconfig>
+        </blocks>
+        <helpers>
+            <orphanedconfig>
+                <class>Hirale_OrphanedConfig_Helper</class>
+            </orphanedconfig>
+        </helpers>
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <orphanedconfig before="Mage_Adminhtml">Hirale_OrphanedConfig_Adminhtml</orphanedconfig>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>
