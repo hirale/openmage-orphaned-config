@@ -33,9 +33,15 @@ class Hirale_OrphanedConfig_Block_Adminhtml_Grid extends Mage_Adminhtml_Block_Wi
             $paths[] = implode('/', [$sectionName, $groupName, $fieldName]);
         }
 
+        $paths = array_merge($paths, Mage::helper('orphanedconfig')->configurationsToExclude);
         $configCollection = Mage::getResourceModel('core/config_data_collection')
             ->addFieldToFilter('path', array('nin' => $paths))
-            ->addFieldToFilter('path', array('nlike' => 'advanced/modules_disable_output/%'));
+            ->addFieldToFilter('path', array('nlike' => 'advanced/modules_disable_output/%'))
+            ->addFieldToFilter('path', array('nlike' => 'payment/pay%')) // Mage Paypal
+            ->addFieldToFilter('path', array('nlike' => 'payment/verisign%')) // Mage Paypal
+            ->addFieldToFilter('path', array('nlike' => 'paypal/%')) // Mage Paypal
+            ->addFieldToFilter('path', array('nlike' => 'design/watermark%')); // Mage Catalog
+
 
         $this->setCollection($configCollection);
 
