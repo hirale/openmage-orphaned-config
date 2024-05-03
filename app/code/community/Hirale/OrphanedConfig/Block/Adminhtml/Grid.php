@@ -33,9 +33,8 @@ class Hirale_OrphanedConfig_Block_Adminhtml_Grid extends Mage_Adminhtml_Block_Wi
             $paths[] = implode('/', [$sectionName, $groupName, $fieldName]);
         }
 
-        $configCollection = Mage::getModel('core/config_data')->getCollection();
-        $configCollection = Mage::getResourceModel('core/config_data_collection');
-        $configCollection->addFieldToFilter('path', array('nin' => $paths))
+        $configCollection = Mage::getResourceModel('core/config_data_collection')
+            ->addFieldToFilter('path', array('nin' => $paths))
             ->addFieldToFilter('path', array('nlike' => 'advanced/modules_disable_output/%'));
 
         $this->setCollection($configCollection);
