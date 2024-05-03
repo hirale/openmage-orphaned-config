@@ -40,11 +40,13 @@ class Hirale_OrphanedConfig_Block_Adminhtml_Grid extends Mage_Adminhtml_Block_Wi
             ->addFieldToFilter('path', array('nlike' => 'payment/pay%')) // Mage Paypal
             ->addFieldToFilter('path', array('nlike' => 'payment/verisign%')) // Mage Paypal
             ->addFieldToFilter('path', array('nlike' => 'paypal/%')) // Mage Paypal
-            ->addFieldToFilter('path', array('nlike' => 'design/watermark%')); // Mage Catalog
-
+            ->addFieldToFilter('path', array('nlike' => 'design/watermark%')) // Mage Catalog
+            ->addFieldToFilter('path', array('nlike' => 'tax/%')) // Mage Tax
+            ->addFieldToFilter('path', array('nlike' => 'sales/totals_sort%')) // Mage Sales
+            ->addFieldToFilter('path', array('nlike' => 'sales/gift_options/%')) // Mage GiftMessage
+            ->addFieldToFilter('path', array('nlike' => 'crontab/jobs/%')); // Mage Adminhtml
 
         $this->setCollection($configCollection);
-
         return parent::_prepareCollection();
     }
 
