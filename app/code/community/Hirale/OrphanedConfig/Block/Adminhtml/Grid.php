@@ -27,10 +27,14 @@ class Hirale_OrphanedConfig_Block_Adminhtml_Grid extends Mage_Adminhtml_Block_Wi
         $configFields = $configSections->xpath('//sections/*/groups/*/fields/*');
 
         foreach ($configFields as $configField) {
-            $fieldName = $configField->getName();
-            $groupName = $configField->getParent()->getParent()->getName();
-            $sectionName = $configField->getParent()->getParent()->getParent()->getParent()->getName();
-            $paths[] = implode('/', [$sectionName, $groupName, $fieldName]);
+            if ($configField->config_path) {
+                $paths[] = (string) $configField->config_path;
+            } else {
+                $fieldName = $configField->getName();
+                $groupName = $configField->getParent()->getParent()->getName();
+                $sectionName = $configField->getParent()->getParent()->getParent()->getParent()->getName();
+                $paths[] = implode('/', [$sectionName, $groupName, $fieldName]);
+            }
         }
 
         $paths = array_merge($paths, Mage::helper('orphanedconfig')->configurationsToExclude);
